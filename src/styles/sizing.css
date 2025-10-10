@@ -1,0 +1,57 @@
+:root {
+    --len-base: calc(0.25 * 1rem);
+    --len-default: 1rem;
+    --len-05: calc(0.5 * var(--len-base));
+    --len-10: calc(1 * var(--len-base));
+    --len-15: calc(1.5 * var(--len-base));
+    --len-20: calc(2 * var(--len-base));
+    --len-25: calc(2.5 * var(--len-base));
+    --len-30: calc(3 * var(--len-base));
+    --len-35: calc(3.5 * var(--len-base));
+    --len-40: calc(4 * var(--len-base));
+    --len-45: calc(4.5 * var(--len-base));
+    --len-50: calc(5 * var(--len-base));
+    --len-55: calc(5.5 * var(--len-base));
+    --len-60: calc(6 * var(--len-base));
+    --len-65: calc(6.5 * var(--len-base));
+    --len-70: calc(7 * var(--len-base));
+    --len-75: calc(7.5 * var(--len-base));
+    --len-80: calc(8 * var(--len-base));
+    --len-85: calc(8.5 * var(--len-base));
+    --len-90: calc(9 * var(--len-base));
+    --len-95: calc(9.5 * var(--len-base));
+    --len-100: calc(10 * var(--len-base));
+    --len-105: calc(10.5 * var(--len-base));
+    --len-110: calc(11 * var(--len-base));
+    --len-115: calc(11.5 * var(--len-base));
+    --len-120: calc(12 * var(--len-base));
+
+    --len-large: var(--len-120);
+
+    --font-mini: 0.6rem;
+    --font-caption: 0.75rem;
+    --font-small: 0.9rem;
+    --font-normal: 1rem;
+    --font-large: 1.25rem;
+    --font-xlarge: 1.5rem;
+}
+
+.f-xs {
+    font-size: var(--font-mini);
+}
+
+.f-caption {
+    font-size: var(--font-caption);
+}
+
+.f-s {
+    font-size: var(--font-small);
+}
+
+.f-n {
+    font-size: var(--font-normal);
+}
+
+.f-l {
+    font-size: var(--font-large);
+}

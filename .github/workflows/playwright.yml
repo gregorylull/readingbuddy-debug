@@ -1,0 +1,37 @@
+name: Playwright Tests
+run-name: ${{ github.actor }} is testing out Github Actions with Playwright.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+jobs:
+  test:
+    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was auto triggered by a ${{github.event_name}} event"
+      - run: echo "This job is running on ${{runner.os}} hosted on github"
+      - run: echo "The repo is ${{github.repository}} and the branch is ${{github.ref}}"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: List files in the repo
+        run: |
+          ls ${{github.workspace}}
+      # Any kind of node running will make it hang and not move forward,
+      # - name: Bootup App
+      #   run: npm run dev
+      - name: Run Playwright tests
+        run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

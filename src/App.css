@@ -1,0 +1,33 @@
+.main-container {
+    height: 100vh;
+    height: 100dvh;
+
+    text-align: left;
+
+    display: grid;
+    grid-template-columns: 1.5fr 4fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        'header header'
+        'side-nav main-body'
+        'footer footer';
+}
+
+.main-header {
+    grid-area: header;
+}
+
+.main-nav {
+    grid-area: side-nav;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main-body {
+    grid-area: main-body;
+    overflow: hidden;
+}
+
+.main-footer {
+    grid-area: footer;
+}
