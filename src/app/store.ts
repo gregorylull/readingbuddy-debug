@@ -2,7 +2,7 @@ import { combineReducers, configureStore, createAsyncThunk } from '@reduxjs/tool
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 import { api } from './apiSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const rootReducer = combineReducers({
     [api.reducerPath]: api.reducer,
@@ -21,6 +21,7 @@ export const setupStore = (preloadedState?: Partial<RootState>) => {
 export const store = setupStore();
 export type AppDispatch = typeof store.dispatch;
 export const useAppDispatch = useDispatch.withTypes<AppDispatch>();
+export const useAppSelector = useSelector.withTypes<RootState>();
 
 setupListeners(store.dispatch);
 
