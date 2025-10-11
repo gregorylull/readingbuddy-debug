@@ -1,6 +1,8 @@
 .main-container {
     height: 100vh;
     height: 100dvh;
+    background-color: grey;
+    color: white;
 
     text-align: left;
 
